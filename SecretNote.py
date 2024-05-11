@@ -59,10 +59,9 @@ def SaveEndEncrypt():
     else:
           #password add dict
         keys = Fernet.generate_key()
-        keys1 = Fernet.generate_key()
-        fernet1 = Fernet(keys1)
-        passwordx = fernet1.encrypt(password.get().encode("utf-8"))
-        Note_Dictionary[isimEntry.get()] = passwordx #password şifreliyorum
+
+
+        Note_Dictionary[isimEntry.get()] = password.get() #password şifreliyorum
         i += 1
 
         with open('SecretNote/passwords.txt', 'w') as file:  #update txt file
